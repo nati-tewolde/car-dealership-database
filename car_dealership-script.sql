@@ -81,7 +81,7 @@ CREATE TABLE `Lease_Contracts` (
 # ---------------------------------------------------------------------- #
 # Add info into "Vehicles"                                               #
 # ---------------------------------------------------------------------- #
-INSERT INTO vehicles (VIN, make, model, year, SOLD, color, vehicleType, odometer, price) VALUES
+INSERT INTO Vehicles (VIN, make, model, year, SOLD, color, vehicleType, odometer, price) VALUES
 ('1HGCM82633A004352', 'Honda', 'Civic', 2020, FALSE, 'Blue', 'Sedan', 25000, 18000),
 ('1J4FA49S01P123456', 'Jeep', 'Wrangler', 2021, FALSE, 'Red', 'SUV', 15000, 35000),
 ('WAUZZZF41JA123789', 'Audi', 'A4', 2019, FALSE, 'White', 'Sedan', 33000, 24000),
@@ -91,32 +91,31 @@ INSERT INTO vehicles (VIN, make, model, year, SOLD, color, vehicleType, odometer
 # ---------------------------------------------------------------------- #
 # Add info into "Dealerships"                                            #
 # ---------------------------------------------------------------------- #
-INSERT INTO dealerships (name, address, phone) VALUES
+INSERT INTO Dealerships (name, address, phone) VALUES
 ('Sunrise Auto Mall', '100 Main St', '555-111-2222'),
 ('Highway Motors', '250 Industrial Rd', '555-444-8888'),
 ('Premium Auto House', '980 Capital Ave', '555-666-7777');
 
 # ---------------------------------------------------------------------- #
+# Add info into "Lease Contracts"                                        #
+# ---------------------------------------------------------------------- #
+INSERT INTO Lease_Contracts (VIN, lease_start, lease_end, monthly_payment) VALUES
+('1J4FA49S01P123456', '2024-01-01', '2026-01-01', 499.00),
+('5YJ3E1EA7JF123111', '2024-03-01', '2027-03-01', 699.00);
+
+# ---------------------------------------------------------------------- #
+# Add info into "Sales Contracts"                                        #
+# ---------------------------------------------------------------------- #
+INSERT INTO Sales_Contracts (VIN, sale_date, price) VALUES
+('1HGCM82633A004352', '2024-01-18', 17500),
+('WAUZZZF41JA123789', '2024-02-03', 23000);
+
+# ---------------------------------------------------------------------- #
 # Add info into "Inventory"                                              #
 # ---------------------------------------------------------------------- #
-INSERT INTO inventory (dealership_id, VIN) VALUES
+INSERT INTO Inventory (dealership_id, VIN) VALUES
 (1, '1HGCM82633A004352'),
 (1, '1J4FA49S01P123456'),
 (2, 'WAUZZZF41JA123789'),
 (3, '5YJ3E1EA7JF123111'),
 (2, '1FTFW1EG5HFA12345');
-
-# ---------------------------------------------------------------------- #
-# Add info into "Sales Contracts"                                        #
-# ---------------------------------------------------------------------- #
-INSERT INTO sales_contracts (VIN, sale_date, price) VALUES
-('1HGCM82633A004352', '2024-01-18', 17500),
-('WAUZZZF41JA123789', '2024-02-03', 23000);
-
-# ---------------------------------------------------------------------- #
-# Add info into "Lease Contracts"                                        #
-# ---------------------------------------------------------------------- #
-INSERT INTO lease_contracts (VIN, lease_start, lease_end, monthly_payment) VALUES
-('1J4FA49S01P123456', '2024-01-01', '2026-01-01', 499.00),
-('5YJ3E1EA7JF123111', '2024-03-01', '2027-03-01', 699.00);
-
