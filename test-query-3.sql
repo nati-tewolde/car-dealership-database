@@ -1,0 +1,3 @@
+SELECT v.*
+FROM vehicles v
+WHERE VIN = '1HGCM82633A004352';
